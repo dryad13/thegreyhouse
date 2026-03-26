@@ -1,0 +1,8 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#E8DED1"/>
+  <rect x="88" y="96" width="624" height="608" rx="32" fill="#F8F3EC"/>
+  <rect x="150" y="412" width="500" height="190" rx="28" fill="#7D6D61"/>
+  <rect x="180" y="310" width="200" height="120" rx="20" fill="#CFC3B3"/>
+  <rect x="424" y="246" width="160" height="220" rx="20" fill="#DED2C4"/>
+  <text x="118" y="742" fill="#5B4F45" font-family="Arial, sans-serif" font-size="34">Lounge</text>
+</svg>

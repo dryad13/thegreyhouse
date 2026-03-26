@@ -1,0 +1,9 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" fill="#EAE0D2"/>
+  <rect x="112" y="94" width="976" height="612" rx="34" fill="#FAF6F0"/>
+  <rect x="210" y="188" width="780" height="428" rx="26" fill="#E4D8C9"/>
+  <rect x="312" y="270" width="230" height="240" rx="18" fill="#F3EEE7"/>
+  <rect x="606" y="246" width="160" height="292" rx="20" fill="#77685B"/>
+  <rect x="798" y="270" width="112" height="240" rx="20" fill="#CBBEAE"/>
+  <text x="150" y="752" fill="#5B4F45" font-family="Arial, sans-serif" font-size="34">Bathroom</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="800" height="1100" viewBox="0 0 800 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1100" fill="#EFE7DB"/>
+  <rect x="98" y="150" width="604" height="786" rx="26" fill="#FBF7F2"/>
+  <rect x="186" y="242" width="428" height="548" rx="22" fill="#DAD0C3"/>
+  <rect x="224" y="594" width="352" height="158" rx="18" fill="#7C6C5E"/>
+  <rect x="270" y="306" width="260" height="164" rx="16" fill="#F3EEE7"/>
+  <text x="118" y="1004" fill="#5B4F45" font-family="Arial, sans-serif" font-size="34">Bedroom</text>
+</svg>

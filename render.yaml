@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: the-grey-house
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .

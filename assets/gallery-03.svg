@@ -1,0 +1,9 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="800" fill="#F0E8DD"/>
+  <rect x="90" y="120" width="620" height="560" rx="30" fill="#FBF7F2"/>
+  <rect x="142" y="216" width="514" height="122" rx="20" fill="#D8CCBD"/>
+  <rect x="142" y="372" width="514" height="180" rx="20" fill="#78685B"/>
+  <rect x="190" y="258" width="100" height="220" rx="16" fill="#F3EEE7"/>
+  <rect x="510" y="250" width="96" height="176" rx="16" fill="#E6D9CB"/>
+  <text x="118" y="734" fill="#5B4F45" font-family="Arial, sans-serif" font-size="34">Kitchen</text>
+</svg>
