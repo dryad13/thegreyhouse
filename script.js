@@ -1,6 +1,6 @@
 const siteConfig = {
   airbnbUrl: "#",
-  instagramUrl: "#",
+  instagramUrl: "https://www.instagram.com/thegreyhouse.khi/",
   mapUrl: "#",
   googleFormEmbedUrl:
     "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform?embedded=true",
@@ -73,3 +73,73 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
 });
+
+const gallery = document.querySelector("[data-gallery]");
+
+if (gallery) {
+  const viewport = gallery.querySelector("[data-gallery-viewport]");
+  const track = gallery.querySelector("[data-gallery-track]");
+  const slides = track ? Array.from(track.querySelectorAll(".gallery-slide")) : [];
+  const nextButton = gallery.querySelector("[data-gallery-next]");
+  const prevButton = gallery.querySelector("[data-gallery-prev]");
+  const dotsContainer = document.querySelector("[data-gallery-dots]");
+
+  if (!viewport || !track || !nextButton || !prevButton || !dotsContainer || slides.length === 0) {
+    // Missing required gallery nodes; skip interactive setup.
+  } else {
+    let index = 0;
+
+    const goToSlide = (nextIndex) => {
+      index = (nextIndex + slides.length) % slides.length;
+      const left = index * viewport.clientWidth;
+      viewport.scrollTo({ left, behavior: "smooth" });
+
+      dotsContainer.querySelectorAll(".gallery-dot").forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+        dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+      });
+    };
+
+    slides.forEach((_, slideIndex) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "gallery-dot";
+      dot.setAttribute("aria-label", `Go to image ${slideIndex + 1}`);
+      dot.addEventListener("click", () => goToSlide(slideIndex));
+      dotsContainer.appendChild(dot);
+    });
+
+    nextButton.addEventListener("click", () => goToSlide(index + 1));
+    prevButton.addEventListener("click", () => goToSlide(index - 1));
+
+    viewport.addEventListener("scroll", () => {
+      const viewportWidth = viewport.clientWidth || 1;
+      const nextIndex = Math.round(viewport.scrollLeft / viewportWidth);
+      if (nextIndex === index) {
+        return;
+      }
+
+      index = Math.max(0, Math.min(nextIndex, slides.length - 1));
+      dotsContainer.querySelectorAll(".gallery-dot").forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+        dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (!gallery.matches(":hover") && !gallery.contains(document.activeElement)) {
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        goToSlide(index + 1);
+      }
+
+      if (event.key === "ArrowLeft") {
+        goToSlide(index - 1);
+      }
+    });
+
+    goToSlide(0);
+  }
+}
