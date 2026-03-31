@@ -1,6 +1,6 @@
 const siteConfig = {
   airbnbUrl: "#",
-  instagramUrl: "#",
+  instagramUrl: "https://www.instagram.com/thegreyhouse.khi/",
   mapUrl: "#",
   googleFormEmbedUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScQ_etCpin_rUTB0gRU7Ve4jtzu6hICQwTauUvk0e-RpXF81Q/viewform?embedded=true",
@@ -72,3 +72,74 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
 });
+
+const gallery = document.querySelector("[data-gallery]");
+
+if (gallery) {
+  const track = gallery.querySelector("[data-gallery-track]");
+  const slides = Array.from(track.querySelectorAll(".gallery-slide"));
+  const nextButton = gallery.querySelector("[data-gallery-next]");
+  const prevButton = gallery.querySelector("[data-gallery-prev]");
+  const dotsContainer = document.querySelector("[data-gallery-dots]");
+  let index = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const goToSlide = (nextIndex) => {
+    index = (nextIndex + slides.length) % slides.length;
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dotsContainer.querySelectorAll(".gallery-dot").forEach((dot, dotIndex) => {
+      dot.classList.toggle("is-active", dotIndex === index);
+      dot.setAttribute("aria-current", dotIndex === index ? "true" : "false");
+    });
+  };
+
+  slides.forEach((_, slideIndex) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.className = "gallery-dot";
+    dot.setAttribute("aria-label", `Go to image ${slideIndex + 1}`);
+    dot.addEventListener("click", () => goToSlide(slideIndex));
+    dotsContainer.appendChild(dot);
+  });
+
+  nextButton.addEventListener("click", () => goToSlide(index + 1));
+  prevButton.addEventListener("click", () => goToSlide(index - 1));
+
+  track.addEventListener("touchstart", (event) => {
+    touchStartX = event.changedTouches[0].clientX;
+  });
+
+  track.addEventListener("touchend", (event) => {
+    touchEndX = event.changedTouches[0].clientX;
+    const delta = touchStartX - touchEndX;
+
+    if (Math.abs(delta) < 40) {
+      return;
+    }
+
+    if (delta > 0) {
+      goToSlide(index + 1);
+      return;
+    }
+
+    goToSlide(index - 1);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!gallery.matches(":hover") && !gallery.contains(document.activeElement)) {
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      goToSlide(index + 1);
+    }
+
+    if (event.key === "ArrowLeft") {
+      goToSlide(index - 1);
+    }
+  });
+
+  goToSlide(0);
+}
