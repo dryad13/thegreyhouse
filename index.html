@@ -180,74 +180,84 @@
           <h2>A Closer Look</h2>
         </div>
 
-        <div class="gallery-grid" aria-label="Gallery preview">
-          <figure class="gallery-card gallery-tall">
-            <img
-              class="focus-top"
-              src="assets/The Grey House/2FF09A9C-1B2D-4A7E-9DC8-F68477C1E199.webp"
-              alt="Bedroom with textured linens and soft ambient light"
-              width="1024"
-              height="1536"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure class="gallery-card">
-            <img
-              class="focus-center"
-              src="assets/The Grey House/44D3D3DB-FE64-44F6-B398-42DA184E3225.webp"
-              alt="Lounge corner with seating and warm tones"
-              width="1024"
-              height="1536"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure class="gallery-card">
-            <img
-              class="focus-bottom"
-              src="assets/The Grey House/6EF33009-7448-4E1C-B930-64555E7B8199.webp"
-              alt="Kitchen details with clean countertops and minimal styling"
-              width="1024"
-              height="1536"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure class="gallery-card gallery-wide">
-            <img
-              src="assets/The Grey House/7E4C8781-8F53-4278-BA88-8A909B634986.webp"
-              class="focus-center"
-              alt="Bathroom interior with stone textures and natural finishes"
-              width="1024"
-              height="1536"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure class="gallery-card">
-            <img
-              class="focus-center"
-              src="assets/The Grey House/86378305-93FF-46DA-A67B-2F598C2673D3.webp"
-              alt="Dining setup with curated tableware and neutral palette"
-              width="1024"
-              height="1536"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <figure class="gallery-card">
-            <img
-              src="assets/The Grey House/8DDA488E-08AD-4A5D-A91D-C6A58018F6B8.webp"
-              class="focus-top"
-              alt="Close-up of minimalist interior detail and materials"
-              width="1024"
-              height="1536"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
+        <div class="gallery-carousel" data-gallery>
+          <button class="gallery-nav" data-gallery-prev aria-label="Previous image">&#8592;</button>
+
+          <div class="gallery-viewport">
+            <div class="gallery-track" data-gallery-track>
+              <figure class="gallery-slide">
+                <img
+                  class="focus-top"
+                  src="assets/The Grey House/2FF09A9C-1B2D-4A7E-9DC8-F68477C1E199.webp"
+                  alt="Bedroom with textured linens and soft ambient light"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  class="focus-center"
+                  src="assets/The Grey House/44D3D3DB-FE64-44F6-B398-42DA184E3225.webp"
+                  alt="Lounge corner with seating and warm tones"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  class="focus-bottom"
+                  src="assets/The Grey House/6EF33009-7448-4E1C-B930-64555E7B8199.webp"
+                  alt="Kitchen details with clean countertops and minimal styling"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  class="focus-center"
+                  src="assets/The Grey House/7E4C8781-8F53-4278-BA88-8A909B634986.webp"
+                  alt="Bathroom interior with stone textures and natural finishes"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  class="focus-center"
+                  src="assets/The Grey House/86378305-93FF-46DA-A67B-2F598C2673D3.webp"
+                  alt="Dining setup with curated tableware and neutral palette"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide">
+                <img
+                  class="focus-top"
+                  src="assets/The Grey House/8DDA488E-08AD-4A5D-A91D-C6A58018F6B8.webp"
+                  alt="Close-up of minimalist interior detail and materials"
+                  width="1024"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+
+          <button class="gallery-nav" data-gallery-next aria-label="Next image">&#8594;</button>
         </div>
+
+        <div class="gallery-dots" data-gallery-dots></div>
 
         <p class="gallery-note">A preview of the interiors, textures, and quiet corners throughout the stay.</p>
       </section>
