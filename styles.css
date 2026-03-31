@@ -659,6 +659,21 @@ h3 {
     display: none;
   }
 
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section-split,
+  .experience,
+  .booking-section,
+  .site-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  main {
+    padding: 1.5rem 0 3rem;
+  }
+
   .hero-frame img {
     height: 24rem;
   }
