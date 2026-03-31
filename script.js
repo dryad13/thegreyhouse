@@ -3,7 +3,7 @@ const siteConfig = {
   instagramUrl: "https://www.instagram.com/thegreyhouse.khi/",
   mapUrl: "#",
   googleFormEmbedUrl:
-    "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform?embedded=true",
+    "<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScQ_etCpin_rUTB0gRU7Ve4jtzu6hICQwTauUvk0e-RpXF81Q/viewform?embedded=true" width="640" height="645" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>",
   whatsappNumber: "923101468777",
   whatsappMessage:
     "Hello, I would like to book a stay at The Grey House in Karachi.",
