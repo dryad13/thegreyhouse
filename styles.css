@@ -355,19 +355,23 @@ h3 {
 }
 
 .section-split {
-  display: grid;
-  grid-template-columns: minmax(0, 0.75fr) minmax(0, 1fr);
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
 }
 
 .section-heading-centered {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3.5rem;
 }
 
 .prose {
   display: grid;
-  gap: 1.25rem;
+  gap: 1.5rem;
+  max-width: 48rem;
+  margin: 0 auto;
 }
 
 .spaces-grid {
@@ -397,14 +401,18 @@ h3 {
 }
 
 .experience {
-  display: grid;
-  gap: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
 }
 
 .experience-copy {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.75rem;
   max-width: 52rem;
+  margin: 0 auto;
   font-size: clamp(1.25rem, 2vw, 1.8rem);
 }
 
@@ -558,24 +566,25 @@ h3 {
 }
 
 .site-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  text-align: center;
+  gap: 2.5rem;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
 }
 
 .footer-title {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
   color: var(--text);
   font-family: "Noto Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 
 .footer-links {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 2rem;
   color: var(--text-muted);
   font-weight: 600;
 }
