@@ -1,14 +1,14 @@
 :root {
-  --bg: #FAF6F3;
-  --bg-strong: #EAE5E0;
-  --surface: rgba(255, 252, 247, 0.82);
-  --surface-strong: rgba(250, 245, 238, 0.96);
-  --text: #000000;
-  --text-muted: #333333;
-  --line: rgba(75, 62, 50, 0.12);
-  --accent: #000000;
-  --accent-deep: #000000;
-  --shadow: 0 24px 64px rgba(73, 57, 44, 0.08);
+  --bg: #F5F5F7;
+  --bg-strong: #E6E6E9;
+  --surface: rgba(240, 240, 242, 0.65);
+  --surface-strong: rgba(235, 235, 240, 0.92);
+  --text: #1A1A1A;
+  --text-muted: #555555;
+  --line: rgba(30, 30, 35, 0.1);
+  --accent: #2C2C2E;
+  --accent-deep: #1C1C1E;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
   --radius-lg: 32px;
   --radius-md: 22px;
   --radius-sm: 16px;
@@ -314,13 +314,13 @@ h3 {
 .experience,
 .booking-section,
 .site-footer {
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  border-right: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 252, 247, 0.65);
-  backdrop-filter: blur(28px) saturate(130%);
-  -webkit-backdrop-filter: blur(28px) saturate(130%);
-  box-shadow: 0 12px 40px rgba(73, 57, 44, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+  border-right: 1px solid rgba(0, 0, 0, 0.03);
+  background: var(--surface);
+  backdrop-filter: blur(30px) saturate(110%);
+  -webkit-backdrop-filter: blur(30px) saturate(110%);
+  box-shadow: var(--shadow);
 }
 
 .hero-frame {
