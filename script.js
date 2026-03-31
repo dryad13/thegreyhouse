@@ -3,7 +3,7 @@ const siteConfig = {
   instagramUrl: "#",
   mapUrl: "#",
   googleFormEmbedUrl:
-    "https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform?embedded=true",
+    "https://docs.google.com/forms/d/e/1FAIpQLScQ_etCpin_rUTB0gRU7Ve4jtzu6hICQwTauUvk0e-RpXF81Q/viewform?embedded=true",
   whatsappNumber: "923101468777",
   whatsappMessage:
     "Hello, I would like to book a stay at The Grey House in Karachi.",
@@ -12,7 +12,6 @@ const siteConfig = {
 const isPlaceholder = (value) =>
   !value ||
   value === "#" ||
-  value.includes("REPLACE_WITH_FORM_ID") ||
   value.includes("example.com");
 
 const whatsappUrl = `https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(
