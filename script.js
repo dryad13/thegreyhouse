@@ -1,7 +1,7 @@
 const siteConfig = {
   airbnbUrl: "#",
   instagramUrl: "https://www.instagram.com/thegreyhouse.khi/",
-  mapUrl: "#",
+  mapUrl: "https://maps.app.goo.gl/4e52omxqfRQbwF1YA",
   googleFormEmbedUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScQ_etCpin_rUTB0gRU7Ve4jtzu6hICQwTauUvk0e-RpXF81Q/viewform?embedded=true",
   whatsappNumber: "923101468777",
