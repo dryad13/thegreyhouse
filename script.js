@@ -141,5 +141,54 @@ if (gallery) {
     }
   });
 
+  // Spaces Carousel (Auto-rotating)
+  const spacesCarousel = document.querySelector("[data-spaces-carousel]");
+  if (spacesCarousel) {
+    const track = spacesCarousel.querySelector("[data-spaces-track]");
+    const slides = Array.from(track.querySelectorAll(".spaces-slide"));
+    const dotsContainer = spacesCarousel.querySelector("[data-spaces-dots]");
+    let index = 0;
+    let autoPlayInterval;
+
+    const goToSlide = (nextIndex) => {
+      index = (nextIndex + slides.length) % slides.length;
+      track.style.transform = `translateX(-${index * 100}%)`;
+
+      dotsContainer.querySelectorAll(".spaces-dot").forEach((dot, dotIndex) => {
+        dot.classList.toggle("is-active", dotIndex === index);
+      });
+    };
+
+    slides.forEach((_, slideIndex) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "spaces-dot";
+      dot.setAttribute("aria-label", `Go to room ${slideIndex + 1}`);
+      dot.addEventListener("click", () => {
+        goToSlide(slideIndex);
+        resetAutoPlay();
+      });
+      dotsContainer.appendChild(dot);
+    });
+
+    const startAutoPlay = () => {
+      autoPlayInterval = setInterval(() => {
+        goToSlide(index + 1);
+      }, 8000); // Slow rotation (8s)
+    };
+
+    const resetAutoPlay = () => {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    };
+
+    spacesCarousel.addEventListener("mouseenter", () => clearInterval(autoPlayInterval));
+    spacesCarousel.addEventListener("mouseleave", startAutoPlay);
+
+    // Initial setup
+    goToSlide(0);
+    startAutoPlay();
+  }
+
   goToSlide(0);
 }
