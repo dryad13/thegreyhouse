@@ -179,6 +179,19 @@ main,
   color: var(--text);
 }
 
+.button-whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.2);
+}
+
+.button-whatsapp:hover,
+.button-whatsapp:focus-visible {
+  background: #128C7E;
+  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.35);
+}
+
 .header-cta:hover,
 .header-cta:focus-visible,
 .button:hover,
@@ -600,11 +613,6 @@ h3 {
   margin: 1rem auto 0;
 }
 
-.booking-phone-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
-}
 
 .booking-phone {
   margin: 0;
