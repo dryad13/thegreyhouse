@@ -126,11 +126,11 @@ main,
 
 .brand-logo {
   display: block;
-  width: clamp(7rem, 11vw, 8.8rem);
-  height: auto;
+  width: auto;
+  height: 3rem;
   max-height: 3rem;
   object-fit: contain;
-  transform: scale(1.15);
+  transform: scale(1.4);
   transform-origin: left center;
 }
 
