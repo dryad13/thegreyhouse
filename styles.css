@@ -919,6 +919,18 @@ h3 {
   100% { opacity: 0; }
 }
 
+@keyframes heroCrossfadePrimary {
+  0%, 42% { opacity: 1; }
+  50%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes heroCrossfadeSecondary {
+  0%, 42% { opacity: 0; }
+  50%, 92% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
