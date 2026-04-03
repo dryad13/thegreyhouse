@@ -108,6 +108,12 @@ main,
   background: var(--bg);
 }
 
+@media (min-width: 1200px) and (max-height: 1150px) {
+  .site-header {
+    padding: 1rem 3%;
+  }
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: center;
@@ -116,6 +122,12 @@ main,
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.brand-logo {
+  display: block;
+  width: clamp(8.5rem, 16vw, 11.5rem);
+  height: auto;
 }
 
 .brand-dot {
@@ -826,8 +838,8 @@ h3 {
   position: relative;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  height: 75vh;
-  min-height: 550px;
+  height: clamp(560px, 78vh, 860px);
+  min-height: 560px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -845,6 +857,13 @@ h3 {
   }
 }
 
+@media (min-width: 1300px) and (max-height: 1150px) {
+  .hero-container {
+    height: min(82vh, 820px);
+    min-height: 620px;
+  }
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -852,17 +871,49 @@ h3 {
 }
 
 .hero-bg img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 60%;
+  object-position: center 52%;
   filter: brightness(0.65);
-  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@media (min-width: 1400px) and (max-height: 1150px) {
+  .hero-bg img {
+    object-position: center 48%;
+  }
+}
+
+.hero-bg-primary {
+  animation:
+    slowZoom 20s ease-in-out infinite alternate,
+    heroCrossfadePrimary 16s ease-in-out infinite;
+}
+
+.hero-bg-secondary {
+  opacity: 0;
+  animation:
+    slowZoom 20s ease-in-out infinite alternate,
+    heroCrossfadeSecondary 16s ease-in-out infinite;
 }
 
 @keyframes slowZoom {
   0% { transform: scale(1); }
   100% { transform: scale(1.08); }
+}
+
+@keyframes heroCrossfadePrimary {
+  0%, 42% { opacity: 1; }
+  50%, 92% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes heroCrossfadeSecondary {
+  0%, 42% { opacity: 0; }
+  50%, 92% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .hero-content {
