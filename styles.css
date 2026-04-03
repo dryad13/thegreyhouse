@@ -126,10 +126,12 @@ main,
 
 .brand-logo {
   display: block;
-  width: clamp(5.8rem, 9vw, 7.25rem);
+  width: clamp(7rem, 11vw, 8.8rem);
   height: auto;
   max-height: 3rem;
   object-fit: contain;
+  transform: scale(1.15);
+  transform-origin: left center;
 }
 
 .brand-dot {
@@ -905,18 +907,6 @@ h3 {
 @keyframes slowZoom {
   0% { transform: scale(1); }
   100% { transform: scale(1.02); }
-}
-
-@keyframes heroCrossfadePrimary {
-  0%, 42% { opacity: 1; }
-  50%, 92% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes heroCrossfadeSecondary {
-  0%, 42% { opacity: 0; }
-  50%, 92% { opacity: 1; }
-  100% { opacity: 0; }
 }
 
 @keyframes heroCrossfadePrimary {
