@@ -41,6 +41,7 @@
         <a href="#about">About</a>
         <a href="#spaces">Spaces</a>
         <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
         <a href="#booking">Book</a>
       </nav>
 
@@ -65,7 +66,7 @@
           
           <div class="hero-actions">
             <a class="button button-primary" href="#booking">Book Your Stay</a>
-            <a class="button button-secondary" href="#booking">Make an Inquiry</a>
+            <a class="button button-whatsapp" data-link="whatsappUrl" href="#">Make an Inquiry</a>
           </div>
         </div>
       </div>
@@ -288,6 +289,54 @@
         <div class="gallery-dots" data-gallery-dots></div>
 
         <p class="gallery-note">A preview of the interiors, textures, and quiet corners throughout the stay.</p>
+      </section>
+
+      <section class="section reveal" id="reviews">
+        <div class="section-heading section-heading-centered">
+          <p class="eyebrow">Reviews</p>
+          <h2>Guest Reviews from Airbnb</h2>
+        </div>
+
+        <div class="reviews-carousel" data-reviews>
+          <button class="gallery-nav" data-reviews-prev aria-label="Previous review">&#8592;</button>
+          <div class="gallery-viewport reviews-viewport">
+            <div class="gallery-track" data-reviews-track>
+              <figure class="gallery-slide review-slide">
+                <img
+                  src="assets/reviews/review-1.svg"
+                  alt="Airbnb review screenshot from a guest"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide review-slide">
+                <img
+                  src="assets/reviews/review-2.svg"
+                  alt="Airbnb review screenshot highlighting cleanliness and comfort"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+              <figure class="gallery-slide review-slide">
+                <img
+                  src="assets/reviews/review-3.svg"
+                  alt="Airbnb review screenshot describing host support and check-in"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+            </div>
+          </div>
+          <button class="gallery-nav" data-reviews-next aria-label="Next review">&#8594;</button>
+        </div>
+        <div class="gallery-dots" data-reviews-dots></div>
+        <p class="gallery-note">Add your white-background Airbnb review screenshots in <code>assets/reviews/</code> to update this slider.</p>
       </section>
 
       <section class="section section-split location reveal" id="location">
