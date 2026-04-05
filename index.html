@@ -50,6 +50,16 @@
     </div>
 
     <header class="site-header">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
       <a class="brand-mark" href="#top" aria-label="The Grey House home">
         <img
           class="brand-logo"
@@ -66,11 +76,21 @@
         <a href="#spaces">Spaces</a>
         <a href="#gallery">Gallery</a>
         <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
         <a href="#booking">Book</a>
       </nav>
 
       <a class="header-cta" href="#booking">Book Your Stay</a>
     </header>
+
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile menu" hidden>
+      <a href="#about">About</a>
+      <a href="#spaces">Spaces</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
+      <a href="#booking">Book</a>
+    </nav>
 
     <main id="top">
       <div class="hero-container reveal">
@@ -322,7 +342,6 @@
 
         <div class="gallery-dots" data-gallery-dots></div>
 
-        <p class="gallery-note">A preview of the interiors, textures, and quiet corners throughout the stay.</p>
       </section>
 
       <section class="section reveal" id="reviews">
@@ -380,7 +399,6 @@
           <button class="gallery-nav" data-reviews-next aria-label="Next review">&#8594;</button>
         </div>
         <div class="gallery-dots" data-reviews-dots></div>
-        <p class="gallery-note">Add your white-background Airbnb review screenshots in <code>assets/reviews/</code> to update this slider.</p>
       </section>
 
       <section class="section section-split location reveal" id="location">
@@ -430,19 +448,32 @@
             </p>
           </div>
 
-          <iframe
-            id="booking-form"
-            title="The Grey House booking inquiry form"
-            width="640"
-            height="645"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-            loading="lazy"
-          >Loading…</iframe>
+          <button class="button button-primary" type="button" data-open-form>
+            Open Booking Form
+          </button>
         </div>
       </section>
     </main>
+
+    <div class="modal" id="booking-modal" aria-hidden="true" hidden>
+      <div class="modal-backdrop" data-close-form></div>
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="booking-modal-title">
+        <div class="modal-header">
+          <h3 id="booking-modal-title">The Grey House Inquiry Form</h3>
+          <button class="modal-close" type="button" aria-label="Close form" data-close-form>&times;</button>
+        </div>
+        <iframe
+          id="booking-form"
+          title="The Grey House booking inquiry form"
+          width="640"
+          height="645"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          loading="lazy"
+        >Loading…</iframe>
+      </div>
+    </div>
 
     <footer class="site-footer reveal">
       <div>
