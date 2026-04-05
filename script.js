@@ -2,7 +2,7 @@ const siteConfig = {
   airbnbUrl:
     "https://www.airbnb.co.uk/rooms/1649175961446729410?unique_share_id=95fce9aa-cd1b-467b-b689-7882a22487f6&viralityEntryPoint=1&s=76",
   instagramUrl: "https://www.instagram.com/thegreyhouse.khi/",
-  mapUrl: "https://maps.app.goo.gl/4e52omxqfRQbwF1YA",
+  mapUrl: "https://maps.app.goo.gl/XiuE6HErP3mZhuiV6",
   googleFormEmbedUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLScQ_etCpin_rUTB0gRU7Ve4jtzu6hICQwTauUvk0e-RpXF81Q/viewform?embedded=true",
   whatsappNumber: "923101468777",
@@ -45,16 +45,77 @@ document.querySelectorAll("[data-link]").forEach((element) => {
 
 const formFrame = document.querySelector("#booking-form");
 const formStatus = document.querySelector("[data-form-status]");
+const openFormButton = document.querySelector("[data-open-form]");
+const bookingModal = document.querySelector("#booking-modal");
+const closeFormControls = document.querySelectorAll("[data-close-form]");
 
 if (isPlaceholder(siteConfig.googleFormEmbedUrl)) {
-  formFrame.src = "about:blank";
-  formFrame.style.border = "2px dashed rgba(0,0,0,0.1)";
-  formFrame.style.background = "rgba(0,0,0,0.02)";
+  if (formFrame) {
+    formFrame.src = "about:blank";
+    formFrame.style.border = "2px dashed rgba(0,0,0,0.1)";
+    formFrame.style.background = "rgba(0,0,0,0.02)";
+  }
+  if (openFormButton) {
+    openFormButton.setAttribute("aria-disabled", "true");
+    openFormButton.disabled = true;
+  }
 } else {
-  formFrame.src = siteConfig.googleFormEmbedUrl;
-  formStatus.textContent =
-    "Use the embedded inquiry form below for direct client follow-up.";
+  if (formFrame) {
+    formFrame.src = siteConfig.googleFormEmbedUrl;
+  }
+  if (formStatus) {
+    formStatus.textContent = "Click below to open the inquiry form.";
+  }
 }
+
+const openBookingModal = () => {
+  if (!bookingModal) return;
+  bookingModal.hidden = false;
+  bookingModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+};
+
+const closeBookingModal = () => {
+  if (!bookingModal) return;
+  bookingModal.hidden = true;
+  bookingModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+};
+
+openFormButton?.addEventListener("click", openBookingModal);
+closeFormControls.forEach((control) =>
+  control.addEventListener("click", closeBookingModal)
+);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && bookingModal && !bookingModal.hidden) {
+    closeBookingModal();
+  }
+});
+
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector("#mobile-menu");
+
+const closeMobileMenu = () => {
+  if (!menuToggle || !mobileNav) return;
+  mobileNav.hidden = true;
+  menuToggle.setAttribute("aria-expanded", "false");
+  menuToggle.setAttribute("aria-label", "Open menu");
+  menuToggle.textContent = "☰";
+};
+
+menuToggle?.addEventListener("click", () => {
+  if (!mobileNav) return;
+  const isOpen = !mobileNav.hidden;
+  mobileNav.hidden = isOpen;
+  menuToggle.setAttribute("aria-expanded", String(!isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
+  menuToggle.textContent = isOpen ? "☰" : "✕";
+});
+
+mobileNav?.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
+});
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
