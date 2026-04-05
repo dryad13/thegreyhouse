@@ -876,7 +876,11 @@ h3 {
     transform-origin: center;
   }
 
-  .mobile-nav {
+  .mobile-nav[hidden] {
+    display: none;
+  }
+
+  .mobile-nav:not([hidden]) {
     display: grid;
     gap: 0.65rem;
     width: min(calc(100% - 1rem), var(--max-width));
